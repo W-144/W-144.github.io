@@ -1,0 +1,889 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Wu">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="注意 :本篇适用于抹掉mac完全重装Windows如果只是想简单的装个双系统完全没必要这么麻烦  提醒：在执行所有操作之前请确定在Mac电脑上已经没有重要的文件  Part 1. 准备工具  Windows 10&#x2F;11 镜像 (ISO 文件)  至少 32GB 的 U 盘   稳定的网络连接 (用于下载驱动)  外接有线键盘（重要，必要）  外接鼠标（非必要，但是有鼠标操作会简单很多）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MacBook-Pro-2019-Setup-Guide">
+<meta property="og:url" content="http://example.com/2026/02/28/MacBook-Pro-2019-Setup-Guide/index.html">
+<meta property="og:site_name" content="Wu的技术空间">
+<meta property="og:description" content="注意 :本篇适用于抹掉mac完全重装Windows如果只是想简单的装个双系统完全没必要这么麻烦  提醒：在执行所有操作之前请确定在Mac电脑上已经没有重要的文件  Part 1. 准备工具  Windows 10&#x2F;11 镜像 (ISO 文件)  至少 32GB 的 U 盘   稳定的网络连接 (用于下载驱动)  外接有线键盘（重要，必要）  外接鼠标（非必要，但是有鼠标操作会简单很多）">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-02-27T16:16:46.000Z">
+<meta property="article:modified_time" content="2026-02-27T16:33:27.833Z">
+<meta property="article:author" content="John Wu">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>MacBook-Pro-2019-Setup-Guide - Wu的技术空间</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>Archives</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>Tags</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="MacBook-Pro-2019-Setup-Guide"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2026-02-28 00:16" pubdate>
+          February 28, 2026 am
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          5.7k words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          48 mins
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">MacBook-Pro-2019-Setup-Guide</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p><strong>注意</strong> :本篇适用于抹掉mac完全重装Windows如果只是想简单的装个双系统完全没必要这么麻烦</p>
+<blockquote>
+<p><strong>提醒</strong>：在执行所有操作之前请确定在Mac电脑上已经没有重要的文件</p>
+</blockquote>
+<h2 id="Part-1-准备工具"><a href="#Part-1-准备工具" class="headerlink" title="Part 1. 准备工具"></a>Part 1. 准备工具</h2><ul>
+<li><input disabled="" type="checkbox"> Windows 10&#x2F;11 镜像 (ISO 文件)</li>
+<li><input disabled="" type="checkbox"> 至少 32GB 的 U 盘 </li>
+<li><input disabled="" type="checkbox"> 稳定的网络连接 (用于下载驱动)</li>
+<li><input disabled="" type="checkbox"> 外接有线键盘（重要，必要）</li>
+<li><input disabled="" type="checkbox"> 外接鼠标（非必要，但是有鼠标操作会简单很多）</li>
+<li><input disabled="" type="checkbox"> 另外一个Windows电脑</li>
+<li><input disabled="" type="checkbox"> 扩展坞（把键盘接入macbook用）<blockquote>
+<p><strong>重要</strong>：如果你没有确定的完好的外接键盘一定不要轻易尝试本流程，在装好系统后因为没有驱动，用不了触控板容易卡死在windows界面。请确保有所有的准备工具再进行尝试。</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="Part-2-核心步骤"><a href="#Part-2-核心步骤" class="headerlink" title="Part 2. 核心步骤"></a>Part 2. 核心步骤</h2><h3 id="1-镜像安装"><a href="#1-镜像安装" class="headerlink" title="1.镜像安装"></a>1.镜像安装</h3><p>从一个靠谱的渠道安装Windows镜像即可，将其拷贝到准备的U盘之中。</p>
+<h3 id="2-制作启动盘"><a href="#2-制作启动盘" class="headerlink" title="2.制作启动盘"></a>2.制作启动盘</h3><p>去Rufus官网 <a target="_blank" rel="noopener" href="https://rufus.ie/zh/">https://rufus.ie/zh/</a> 下载Rufus工具，推荐x64便携版</p>
+<h4 id="⚙️-针对-2019-款-Mac-的关键设置（重要！）"><a href="#⚙️-针对-2019-款-Mac-的关键设置（重要！）" class="headerlink" title="⚙️ 针对 2019 款 Mac 的关键设置（重要！）"></a>⚙️ 针对 2019 款 Mac 的关键设置（重要！）</h4><p>在你制作启动盘时，请务必按照以下截图般的逻辑进行设置，否则 Mac 可能无法识别：</p>
+<ol>
+<li><p><strong>设备</strong>：选择你插入的 U 盘（注意：U 盘会被格式化，请备份资料）。</p>
+</li>
+<li><p><strong>引导类型选择</strong>：选择你下载好的 Windows 10 或 11 的 ISO 镜像。</p>
+</li>
+<li><p><strong>分区方案</strong>：**务必选择 <code>GPT</code>**（2019 款 Mac 使用 UEFI 引导，必须选 GPT）。</p>
+</li>
+<li><p><strong>目标系统类型</strong>：选择 <code>UEFI (非 CSM)</code>。</p>
+</li>
+<li><p><strong>文件系统</strong>：**务必选择 <code>NTFS</code>**（这是解决“文件过大”报错的核心步骤）。</p>
+<blockquote>
+<p><strong>注意</strong>：<strong>在 Rufus 制作时，请确保勾选了以下几项以避免卡住：</strong></p>
+</blockquote>
+</li>
+</ol>
+<ul>
+<li><p><strong>Remove requirement for an online Microsoft account</strong>（移除在线账户要求）。</p>
+</li>
+<li><p>**Disable data collection (Skip privacy questions)**（跳过隐私设置和联网问答）。</p>
+</li>
+<li><p><strong>Create a local account</strong>（创建本地账户）。</p>
+</li>
+</ul>
+<h3 id="3-驱动安装"><a href="#3-驱动安装" class="headerlink" title="3. 驱动安装"></a>3. 驱动安装</h3><blockquote>
+<p><strong>注意</strong>：Intel 芯片的驱动通常需要通过 Boot Camp 助理下载。</p>
+</blockquote>
+<p> 在BootCamp界面点击macbook左上角的mac上自己状态栏里的点击- <strong>“操作” (Action)</strong> -&gt; <strong>“下载 Windows 支持软件”</strong>。那么就可以得到一个名为Windows support的软件，将这个文件放到U盘的根目录下。</p>
+<blockquote>
+<p><strong>提醒</strong>：一定要先用Rufus制作完启动盘再把驱动拖到U盘根目录下。</p>
+</blockquote>
+<h3 id="4-关闭安全模式"><a href="#4-关闭安全模式" class="headerlink" title="4.关闭安全模式"></a>4.关闭安全模式</h3><blockquote>
+<p>由于2019款Mac采用了T2安全芯片，所以一定要有这个步骤</p>
+</blockquote>
+<p>如果不做这一步，你的 Mac 将禁止从 U 盘启动，也无法识别 Windows 安装程序对硬盘的改动。</p>
+<ol>
+<li><p>关机并重启，立即长按 <strong>Command (⌘) + R</strong> 进入恢复模式。</p>
+</li>
+<li><p>在上方菜单栏点击 <strong>“实用工具” -&gt; “启动安全性实用工具”</strong>。</p>
+</li>
+<li><p>选择 <strong>“无安全性”</strong>。</p>
+</li>
+<li><p>在下方选择 <strong>“允许从外部介质启动”</strong>。</p>
+</li>
+</ol>
+<h3 id="5-进入windows启动盘"><a href="#5-进入windows启动盘" class="headerlink" title="5.进入windows启动盘"></a>5.进入windows启动盘</h3><ul>
+<li><p>插入制作好的 Windows 安装 U 盘。</p>
+</li>
+<li><p>重启 Mac，立即长按 <strong>Option (⌥)</strong> 键。</p>
+</li>
+<li><p>选择黄色图标的 <strong>EFI Boot</strong>。<br><strong>可能用得到的冷知识（强制关机 Mac：长按 Touch ID 键（那个黑方块）10 秒以上直到黑屏。）</strong></p>
+<blockquote>
+<p>如果进入EFI Boot文件的时候出现旋转的地球图标，显示要联网，尝试创建txt文档，写入以下代码，重命名为autounattend.xml放入U盘根目录，再次重启尝试进入EFI Boot：</p>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs xml">&gt;<span class="hljs-meta">&lt;?xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;utf-8&quot;</span>?&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">unattend</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;urn:schemas-microsoft-com:unattend&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">settings</span> <span class="hljs-attr">pass</span>=<span class="hljs-string">&quot;specialize&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">component</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;Microsoft-Windows-Deployment&quot;</span> <span class="hljs-attr">processorArchitecture</span>=<span class="hljs-string">&quot;amd64&quot;</span> <span class="hljs-attr">publicKeyToken</span>=<span class="hljs-string">&quot;31bf3856ad364e35&quot;</span> <span class="hljs-attr">language</span>=<span class="hljs-string">&quot;neutral&quot;</span> <span class="hljs-attr">versionScope</span>=<span class="hljs-string">&quot;nonSxS&quot;</span> <span class="hljs-attr">xmlns:wcm</span>=<span class="hljs-string">&quot;http://schemas.microsoft.com/WCM/2002/XmlSchema&quot;</span> <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">RunSynchronous</span>&gt;</span><br>                <span class="hljs-tag">&lt;<span class="hljs-name">RunSynchronousCommand</span> <span class="hljs-attr">wcm:action</span>=<span class="hljs-string">&quot;add&quot;</span>&gt;</span><br>                    <span class="hljs-tag">&lt;<span class="hljs-name">Description</span>&gt;</span>BypassNRO<span class="hljs-tag">&lt;/<span class="hljs-name">Description</span>&gt;</span><br>                    <span class="hljs-tag">&lt;<span class="hljs-name">Order</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">Order</span>&gt;</span><br>                    <span class="hljs-tag">&lt;<span class="hljs-name">Path</span>&gt;</span>reg add HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\OOBE /v BypassNRO /t REG_DWORD /d 1 /f<span class="hljs-tag">&lt;/<span class="hljs-name">Path</span>&gt;</span><br>                <span class="hljs-tag">&lt;/<span class="hljs-name">RunSynchronousCommand</span>&gt;</span><br>            <span class="hljs-tag">&lt;/<span class="hljs-name">RunSynchronous</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">component</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">settings</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">unattend</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="6-Windows安装界面"><a href="#6-Windows安装界面" class="headerlink" title="6.Windows安装界面"></a>6.Windows安装界面</h3><p>进入EFI Boot后你会发现触控板和mac自己的键盘都用不了了，这个时候就需要外接键盘，将外接键盘接入电脑。<br>Windows 安装程序完全可以用键盘操作。请记住这几个快捷键：</p>
+<ul>
+<li><p><strong><code>Tab</code> 键</strong>：在不同的选项、按钮之间切换（你会看到虚线框在移动）。</p>
+</li>
+<li><p>**<code>空格键 (Space)</code>**：勾选&#x2F;取消勾选（比如“我接受许可条款”）。</p>
+</li>
+<li><p>**<code>方向键 (↑ ↓ ← →)</code>**：在列表里选择分区或语言。</p>
+</li>
+<li><p><strong><code>Enter</code> 键</strong>：点击“下一步”或“确定”。<br>到了选择安装Windows11安装位置的界面，会发现磁盘0分区1，磁盘0分区2等分区，在这里可以把macOS对应的分区格式化：</p>
+</li>
+</ul>
+<h4 id="🛠️-分区“三部曲”：删、选、下一位"><a href="#🛠️-分区“三部曲”：删、选、下一位" class="headerlink" title="🛠️ 分区“三部曲”：删、选、下一位"></a>🛠️ 分区“三部曲”：删、选、下一位</h4><ol>
+<li><p><strong>选中最大的分区</strong>：</p>
+<ul>
+<li><p>按 <strong><code>Tab</code></strong> 键，直到光标（虚线框）跳到分区列表里。</p>
+</li>
+<li><p>使用 <strong><code>↓</code> 方向键</strong>，选中那个容量最大的分区（通常是数百 GB，那是你刚才为 macOS 建立的“家”）。</p>
+</li>
+</ul>
+</li>
+<li><p><strong>执行“强拆”（删除）</strong>：</p>
+<ul>
+<li><p>按 **<code>Alt + D</code>**（删除的快捷键）。</p>
+</li>
+<li><p>系统会弹出一个警告，问你是否确定删除数据。按 **<code>Enter</code>**（确定）。</p>
+</li>
+<li><p><strong>注意</strong>：如果你看到好几个小分区（比如几百 MB 的），建议把它们<strong>全都删掉</strong>，直到列表里只剩下一个：<strong>“驱动器 0 未分配的空间”</strong>。</p>
+</li>
+</ul>
+</li>
+<li><p><strong>激活安装</strong>：</p>
+<ul>
+<li><p>确保选中的是那个整块的 <strong>“未分配的空间”</strong>。</p>
+</li>
+<li><p>直接按 **<code>Alt + N</code>**（下一步的快捷键），或者按 <strong><code>Tab</code></strong> 切换到“下一步”按钮并按 **<code>Enter</code>**。</p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="7-安装驱动"><a href="#7-安装驱动" class="headerlink" title="7.安装驱动"></a>7.安装驱动</h3><p>OK，经过以上步骤，进入windows界面就说明windows操作系统已经安装好了，接下来就可以安装驱动了：</p>
+<h4 id="1-找到驱动文件夹"><a href="#1-找到驱动文件夹" class="headerlink" title="1. 找到驱动文件夹"></a>1. 找到驱动文件夹</h4><ul>
+<li><p><strong>快捷键</strong>：按下键盘上的 <strong><code>Win + E</code></strong> 打开“文件资源管理器”。</p>
+</li>
+<li><p><strong>导航</strong>：按 <strong><code>Tab</code></strong> 键或 <strong><code>方向键</code></strong> 选中左侧的 **“此电脑” (This PC)**。</p>
+</li>
+<li><p><strong>找到 U 盘</strong>：在右侧找到你的安装 U 盘，按 <strong><code>Enter</code></strong> 进去。</p>
+</li>
+<li><p><strong>目标文件夹</strong>：寻找名为 <strong><code>BootCamp</code></strong> 或 <strong><code>WindowsSupport</code></strong> 的文件夹。（注意，这里记得不要在U盘图标对应的文件夹下面找，经过Rufus的制作，U盘里面你放进去文件的储存路径对应的盘符的图标已经变成了Windows图标）</p>
+</li>
+</ul>
+<hr>
+<h4 id="2-运行安装程序"><a href="#2-运行安装程序" class="headerlink" title="2. 运行安装程序"></a>2. 运行安装程序</h4><ol>
+<li><p>进入该文件夹后，找到一个叫 <strong><code>Setup</code></strong> (或者 <code>Setup.exe</code>) 的文件，它的图标通常是一个灰色的正方形。</p>
+</li>
+<li><p>选中它，按 <strong><code>Enter</code></strong> 运行。</p>
+</li>
+<li><p><strong>用户账户控制</strong>：弹窗问你是否允许更改时，按 <strong><code>Alt + Y</code></strong> (代表“是”)。</p>
+</li>
+</ol>
+<hr>
+<h4 id="3-安装过程中的交互"><a href="#3-安装过程中的交互" class="headerlink" title="3. 安装过程中的交互"></a>3. 安装过程中的交互</h4><ul>
+<li><p><strong>欢迎界面</strong>：直接按 <strong><code>Enter</code></strong> (下一步)。</p>
+</li>
+<li><p><strong>许可协议</strong>：按 <strong><code>Tab</code></strong> 选中“我接受”，然后按 **<code>Enter</code>**。</p>
+</li>
+<li><p><strong>静候佳音</strong>：安装程序会开始自动刷入显卡、声卡、T2 芯片和最重要的 <strong>Touch Bar</strong> 驱动。</p>
+</li>
+<li><p><strong>屏幕闪烁</strong>：期间屏幕可能会黑几秒，这是在装显卡驱动，属于正常现象。</p>
+</li>
+</ul>
+<hr>
+<h4 id="4-重启“复活”硬件"><a href="#4-重启“复活”硬件" class="headerlink" title="4. 重启“复活”硬件"></a>4. 重启“复活”硬件</h4><ul>
+<li><p>安装完成后，会提示你 **“重新启动” (Restart)**。</p>
+</li>
+<li><p>务必点击重启。</p>
+</li>
+<li><p><strong>奇迹时刻</strong>：重启进入 Windows 后，你会发现触控板有了压力反馈、Touch Bar 亮了起来、扬声器也有了声音。</p>
+</li>
+</ul>
+<p>有的时候你会发现setup程序进度条一直是空白（百分之零）没动，打开任务管理器发现setup程序占用的内存和cpu都是0。<br>当然，这种情况也是非常正常的，这里分享一种解决方案，除此之外也可以尝试一下结束任务再重新安装，或者重启之后再重新安装，如果没有解决成功，就请大家自己查阅资料找找其他办法。</p>
+<h4 id="下面是一种解决方法"><a href="#下面是一种解决方法" class="headerlink" title="下面是一种解决方法"></a>下面是一种解决方法</h4><ul>
+<li><p>按 <strong><code>Win + E</code></strong> 打开文件资源管理器。</p>
+</li>
+<li><p>进入 <code>U盘 &gt; BootCamp &gt; Drivers &gt; Apple</code>。</p>
+</li>
+<li><p>在当前文件夹中，利用方向键向下找，看到那个图标是小盒子的 <strong><code>BootCamp</code></strong> (Windows Installer 类型，大小约 4,656 KB)。</p>
+</li>
+<li><p>如果这里运行这个因为没有启动转换器运行不了，可以尝试以下方法：</p>
+</li>
+<li><h5 id="1-以管理员身份打开命令行-CMD"><a href="#1-以管理员身份打开命令行-CMD" class="headerlink" title="1. 以管理员身份打开命令行 (CMD)"></a>1. 以管理员身份打开命令行 (CMD)</h5></li>
+<li><p>按下 <strong><code>Win + S</code></strong> 键，输入 **<code>cmd</code>**。</p>
+</li>
+<li><p>看到“命令提示符”后，不要直接回车。按下 **<code>Ctrl + Shift + Enter</code>**。</p>
+</li>
+<li><p>如果弹出“用户账户控制”窗口，按下 <strong><code>Alt + Y</code></strong> 点击“是”。</p>
+</li>
+</ul>
+<h5 id="2-定位到驱动文件夹"><a href="#2-定位到驱动文件夹" class="headerlink" title="2. 定位到驱动文件夹"></a>2. 定位到驱动文件夹</h5><p>在黑色的窗口里，输入以下命令（假设你的 U 盘盘符是 <code>F</code>，如果不是请替换）：</p>
+<blockquote>
+<p><code>F:</code> （回车） <code>cd BootCamp\Drivers\Apple</code> （回车）（这里记得把路径替换成你的Apple文件夹对应的地址）</p>
+</blockquote>
+<h5 id="3-使用-msiexec-命令强行运行"><a href="#3-使用-msiexec-命令强行运行" class="headerlink" title="3. 使用 msiexec 命令强行运行"></a>3. 使用 <code>msiexec</code> 命令强行运行</h5><p>输入以下命令来安装最关键的<strong>触控板驱动</strong>：</p>
+<blockquote>
+<p><code>msiexec /i BootCamp.msi</code> （回车）</p>
+</blockquote>
+<ul>
+<li><p><strong>如果弹出了安装窗口</strong>：直接一路回车（Next）到底。</p>
+</li>
+<li><p><strong>如果报错“必须通过启动转换助理”</strong>： 尝试这个“越狱”命令：</p>
+<blockquote>
+<p><code>msiexec /i BootCamp.msi /qn</code> （回车）</p>
+</blockquote>
+</li>
+</ul>
+<p>如果运行了之后触控板还是没好，但是没报错尝试再次打开最开始的那个Setup文件夹，尝试重新安装，说不定这次就可以直接下下来了</p>
+<h3 id="8-更新，升级驱动"><a href="#8-更新，升级驱动" class="headerlink" title="8.更新，升级驱动"></a>8.更新，升级驱动</h3><p>虽然 <code>Setup.exe</code> 装好了，但为了系统长久稳定，建议再做两件事：</p>
+<ul>
+<li><strong>运行 Apple Software Update</strong>： 在开始菜单里搜索这个程序。它会检查有没有针对 T2 芯片或显卡的最新更新（通常会有针对 Windows 11 的优化补丁）。</li>
+<li><ul>
+<li><strong>检查 Boot Camp 控制面板</strong>： 右下角托盘里应该有一个<strong>灰色的小菱形</strong>图标。点开它可以设置触控板的点击行为（比如“轻点以点击”）以及默认的启动系统。</li>
+</ul>
+</li>
+</ul>
+<h3 id="9-检查更新"><a href="#9-检查更新" class="headerlink" title="9.检查更新"></a>9.检查更新</h3><p>如果你已经完成了上述所有的步骤，那么恭喜你，现在你的Mac电脑重装Windows已经基本完成了接下来你可以打开设置然后检查更新，然后有可能会发现里面还有一些驱动的包还是没有下好并且显示的是百分之零，这个时候重启电脑然后再次进入这个界面点击一下安装，就可以安装了。<br>最后把所有驱动都装好了之后就可以更新Windows了。</p>
+<h2 id="Part-3-激活与后续"><a href="#Part-3-激活与后续" class="headerlink" title="Part 3. 激活与后续"></a>Part 3. 激活与后续</h2><ul>
+<li><input disabled="" type="checkbox"> MAS 激活工具<br>由于mac的架构还是和传统的windows有所不同所以有的时候用激活软件还是会出现“NullReferenceException”的报错，这里分享一种解决方法，可以激活Windows和office</li>
+</ul>
+<h3 id="🚀-MAS-一键激活步骤"><a href="#🚀-MAS-一键激活步骤" class="headerlink" title="🚀 MAS 一键激活步骤"></a>🚀 MAS 一键激活步骤</h3><p>请在网络连通的状态下，按照以下键盘操作执行：</p>
+<ol>
+<li><p><strong>打开管理员 PowerShell</strong>：</p>
+<ul>
+<li><p>按下 <strong><code>Win + X</code></strong> 键，在弹出的菜单中选择 <strong>“终端(管理员)”</strong> 或 <strong>“Windows PowerShell (管理员)”</strong>。</p>
+</li>
+<li><p>如果弹出权限确认窗口，按下 <strong><code>Alt + Y</code></strong> 点击“是”。</p>
+</li>
+</ul>
+</li>
+<li><p><strong>输入指令</strong>：</p>
+<ul>
+<li><p>在蓝色的窗口中，直接输入以下代码（建议手动敲一遍，以免复制不全）：</p>
+<blockquote>
+<p><code>irm https://get.activated.win | iex</code>
+  </p>
+</blockquote>
+</li>
+<li><p>按下 **<code>Enter</code>**。</p>
+</li>
+</ul>
+</li>
+<li><p><strong>选择模式</strong>：</p>
+<ul>
+<li><p>稍等片刻，会弹出一个蓝底黄字的菜单。</p>
+</li>
+<li><p>按下数字键 <strong><code>1</code></strong> (选择 <strong>HWID</strong> 模式)。</p>
+</li>
+<li><p><strong>HWID</strong> 是“硬件 ID 激活”，它会直接在微软服务器上给你的这台 2019 款 MBP 挂上永久正版授权，以后重装系统也会自动激活。</p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="🛠️-容易遗漏的“补漏神器”-避坑必看"><a href="#🛠️-容易遗漏的“补漏神器”-避坑必看" class="headerlink" title="🛠️  容易遗漏的“补漏神器” (避坑必看)"></a>🛠️  容易遗漏的“补漏神器” (避坑必看)</h3><p>重装完系统并不代表结束，为了让这台 2019 款 MBP 跑得更“稳”，你还需要打上这几个技术补丁。</p>
+<h3 id="1-解决时间不同步-时差-8-小时"><a href="#1-解决时间不同步-时差-8-小时" class="headerlink" title="1. 解决时间不同步 (时差 8 小时)"></a>1. 解决时间不同步 (时差 8 小时)</h3><p><strong>痛点</strong>：你会发现 Windows 的时间永远比北京时间慢（或快）8 小时。这是因为 Mac 把主板时间看作 **UTC (世界标准时)**，而 Windows 默认看作 **RTC (本地时间)**。</p>
+<p><strong>方案</strong>：不需要手动调时间，直接给注册表来一刀，让 Windows 也认 UTC 逻辑。</p>
+<ul>
+<li><p><strong>操作</strong>：以管理员身份打开 <strong>CMD</strong>，复制粘贴以下命令并按回车：</p>
+<p>  DOS</p>
+  <figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nix">reg add <span class="hljs-string">&quot;HKEY_LOCAL_MACHINE<span class="hljs-char escape_">\S</span>ystem<span class="hljs-char escape_">\C</span>urrentControlSet<span class="hljs-char escape_">\C</span>ontrol<span class="hljs-char escape_">\T</span>imeZoneInformation&quot;</span> <span class="hljs-symbol">/v</span> RealTimeIsUniversal <span class="hljs-symbol">/t</span> REG_DWORD <span class="hljs-symbol">/d</span> <span class="hljs-number">1</span> <span class="hljs-operator">/</span>f<br></code></pre></td></tr></table></figure>
+</li>
+<li><p><strong>效果</strong>：重启后，时间从此稳如老狗，再也不会反复横跳了。</p>
+</li>
+</ul>
+<hr>
+<h3 id="2-屏幕缩放-拯救视力"><a href="#2-屏幕缩放-拯救视力" class="headerlink" title="2. 屏幕缩放 (拯救视力)"></a>2. 屏幕缩放 (拯救视力)</h3><p><strong>痛点</strong>：2019 款 MBP 的视网膜屏幕分辨率极高，默认 100% 缩放下的图标和字体小到需要放大镜。</p>
+<p><strong>方案</strong>：手动调整 DPI 缩放。</p>
+<ul>
+<li><p><strong>操作</strong>：进入 <strong>设置 -&gt; 系统 -&gt; 屏幕 -&gt; 缩放与布局</strong>。</p>
+</li>
+<li><p><strong>建议</strong>：</p>
+<ul>
+<li><p>**150%**：适合追求显示内容多的同学。</p>
+</li>
+<li><p>**200% (推荐)**：最接近 macOS 的 Retina 质感，看着最舒服。</p>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="3-压制-Intel-CPU-的“怒火”-Macs-Fan-Control"><a href="#3-压制-Intel-CPU-的“怒火”-Macs-Fan-Control" class="headerlink" title="3. 压制 Intel CPU 的“怒火” (Macs Fan Control)"></a>3. 压制 Intel CPU 的“怒火” (Macs Fan Control)</h3><p><strong>痛点</strong>：Windows 下的苹果驱动对风扇调度非常消极，经常 CPU 都 80°C 了风扇才慢悠悠转动，导致键盘烫手甚至降频卡顿。</p>
+<p><strong>方案</strong>：下载 **Macs Fan Control (Windows 版)**。</p>
+<ul>
+<li><p><strong>核心设置</strong>：</p>
+<ul>
+<li><p>不要用默认的“自动”。</p>
+</li>
+<li><p>选择 <strong>“基于传感器值控制”</strong> -&gt; 选择 <strong>“CPU PECI”</strong>。</p>
+</li>
+<li><p><strong>设置范围</strong>：建议设定为 <code>45°C</code> 开始加速，<code>85°C</code> 达到满速。</p>
+</li>
+</ul>
+</li>
+<li><p><strong>效果</strong>：虽然风扇声会大一点，但能保住你的 Intel i7&#x2F;i9 不因过热而“罢工”。</p>
+</li>
+</ul>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>MacBook-Pro-2019-Setup-Guide</div>
+      <div>http://example.com/2026/02/28/MacBook-Pro-2019-Setup-Guide/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>John Wu</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>February 28, 2026</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2026/02/28/hello-world/" title="Hello World">
+                        <span class="hidden-mobile">Hello World</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>
